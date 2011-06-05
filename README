@@ -31,3 +31,5 @@ If you're not using eproject you'll need to tweak this function
   (cadr prj-current))
 
 to return your project dir. It's currently set to eprojects prj-current.
+
+Will probably add flymake support and a api documentation server to round it out.
