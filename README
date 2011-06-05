@@ -17,3 +17,10 @@ I'm not expecting much take up on this and so I expect users to know how to
 tweak it to their own use. However if you're interested but can't make it work
 let me know.
 
+In my haxe mode setup I have the following keys
+
+   (local-set-key (kbd ".") (lambda () (interactive) (hx-complete ".")))
+   (local-set-key (kbd "(") (lambda () (interactive) (hx-complete "(")))
+
+
+I'm using the haxe mode by ;; Copyright (C) 2006-2007 Jens Peter Secher
