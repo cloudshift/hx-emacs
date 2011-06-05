@@ -23,4 +23,11 @@ In my haxe mode setup I have the following keys
    (local-set-key (kbd "(") (lambda () (interactive) (hx-complete "(")))
 
 
-I'm using the haxe mode by ;; Copyright (C) 2006-2007 Jens Peter Secher
+I'm using the haxe mode by Jens Peter Secher.
+
+If you're not using eproject you'll need to tweak this function
+
+(defun prjDir ()
+  (cadr prj-current))
+
+to return your project dir. It's currently set to eprojects prj-current.
