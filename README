@@ -1,0 +1,19 @@
+
+Emacs haxe completion.
+
+Inspired by downloading 500mb of an eclipse plugin for the same purpose.
+
+Integrated with eproject by parsing a build.hxml from the eprojects home
+directory and then storing the classpaths until the project is changed. I only use
+with js target so works very well in that instance for multiple compilation targets.
+
+Completion on ".". Completions placed into an ido selection, very nice with ido
+flex matching enabled.
+
+Completion on "(". A new buffer *haXe* is created where the ( parameter output
+is placed for reference.
+
+I'm not expecting much take up on this and so I expect users to know how to
+tweak it to their own use. However if you're interested but can't make it work
+let me know.
+
