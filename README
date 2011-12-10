@@ -19,15 +19,15 @@ let me know.
 
 In my haxe mode setup I have the following keys
 
-   (local-set-key (kbd ".") (lambda () (interactive) (hx-complete ".")))
-   (local-set-key (kbd "(") (lambda () (interactive) (hx-complete "(")))
+   (local-set-key (kbd ".") (lambda () (interactive) (hxc-complete ".")))
+   (local-set-key (kbd "(") (lambda () (interactive) (hxc-complete "(")))
 
 
 I'm using the haxe mode by Jens Peter Secher.
 
 If you're not using eproject you'll need to tweak this function
 
-(defun prjDir ()
+(defun hxc-prj-dir ()
   (cadr prj-current))
 
 to return your project dir. It's currently set to eprojects prj-current.
