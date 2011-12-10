@@ -30,15 +30,8 @@
   (let ((mylist (hxc-parse-methods raw)))
       (when (length mylist)
         (progn
-        
-;          (insert (mapconcat (lambda (el) (apply 'format "%s %s" el)) mylist "\n")))
-;        
-;        (insert (mapconcat 'identity
-;                (delq nil (mapcar (lambda (el)
-;                    (when (string= selection (car el)) (cadr el))) mylist)) " ")))
-
-        (let ((selection (ido-completing-read "-> "
-              (mapcar (lambda (el) (car el)) mylist))))
+          (let ((selection (ido-completing-read "-> "
+            (mapcar (lambda (el) (car el)) mylist))))
           (forward-char)
           (when selection
             (insert selection)))))))
@@ -72,7 +65,6 @@
 (defun hxc-conditional-comps ()
   (let ((bs (buffer-string)))
        (when (string-match "hxc:\\s-\\(.*\\)" bs)
-         ;(message (concat "got conditional:" (match-string 1 bs)))
          (concat (match-string 1 bs) " "))))
 
 (defun hxc-parse-methods (s)
@@ -120,28 +112,5 @@
   
 (defun hxc-prj-dir ()
   (cadr prj-current))
-
-;(defun gen-haxe-docs ()
-;  (interactive)
-;  (cd (prjDir))
-;  (let ((cmd (concat
-;   "haxe "
-;   (hxc-klass (hxc-package))
-;   (readHxml)
-;   "-js blah.js"
-;   "--no-output"
-;   "-xml api.xml")))
-;    (hxc-msg cmd)
-;    (shell-command-to-string cmd)))
-
-;(defun prjDir ()
-;  (car (delq nil
-;        (mapcar
-;         (lambda (el)
-;           (if (string= (car el) prj-last-open)
-;               (car (cdr el))
-;             nil)
-;           ) prj-list))))
-
 
 (provide 'hxc-complete)
